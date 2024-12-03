@@ -10,7 +10,7 @@ CREATE TABLE comics (
     comicPublisher VARCHAR(50) NOT NULL,
     comicReleased VARCHAR(50),
     comicImageCover VARCHAR(250) NOT NULL,
-)
+);
 
 CREATE TABLE review (
     reviewId SERIAL PRIMARY KEY,
@@ -18,4 +18,5 @@ CREATE TABLE review (
     reviewUser VARCHAR(50) NOT NULL UNIQUE,
     reviewText text,
     reviewRaiting INT,
-)
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+);
