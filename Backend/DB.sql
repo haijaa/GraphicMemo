@@ -9,7 +9,7 @@ CREATE TABLE comics (
     comicAuthor VARCHAR(50),
     comicPublisher VARCHAR(50) NOT NULL,
     comicReleased VARCHAR(50),
-    comicImageCover VARCHAR(250) NOT NULL,
+    comicImageCover VARCHAR(250) NOT NULL
 );
 
 CREATE TABLE review (
@@ -17,6 +17,9 @@ CREATE TABLE review (
     comicId INT REFERENCES comics(comicId) ON DELETE CASCADE,
     reviewUser VARCHAR(50) NOT NULL UNIQUE,
     reviewText text,
-    reviewRaiting INT,
-    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    reviewRating INT,
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+DROP TABLE comics;
+DROP TABLE review CASCADE;
