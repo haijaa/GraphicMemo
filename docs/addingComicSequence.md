@@ -12,4 +12,4 @@ participant DB as Database
     Backend->>DB: Saves comic data
     DB-->>Backend: Returns success
     Backend-->>UI: Comic added confirmation
-    UI-->>User: Closes modal, library updated
+    UI-->>User: Modal closes
