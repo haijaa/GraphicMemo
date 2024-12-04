@@ -1,9 +1,9 @@
-Feature: Adding comicbook to library/read.
+Feature: Adding comicbook to library/read via component AddComic.
 
-User clicks the button "Add comic". A modal opens, user enters all required fields.
-And presses the "Add" button. Sends confirmation to the UI, modal closes and updates library.
+User clicks the button "Add comic". A modal component opens, user enters all required fields.
+And presses the "Add" button. Sends confirmation to the UI, modal closes.
 
 Scenario: Adding to read library
-    Given Im on the website and the library shows X comics
+    Given Im on the page with the AddComic component
     When Im clicking on Add comic and enters all fields then clicks Add
-    Then Library is now updated with one more comicbook.
+    Then Toast with confirmation appears for 3 seconds, then modal closes
