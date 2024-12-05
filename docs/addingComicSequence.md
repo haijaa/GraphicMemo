@@ -1,15 +1,15 @@
 sequenceDiagram
 actor User
-participant UI as Frontend
+participant Frontend
 participant Backend
-participant DB as Database
+participant Database
 
-    User->>UI: Opens "Add Comic" modal
-    UI->>User: Shows modal form
-    User->>UI: Fills in required fields
-    User->>UI: Clicks "Add" button
-    UI->>Backend: Sends comic data
-    Backend->>DB: Saves comic data
-    DB-->>Backend: Returns success
-    Backend-->>UI: Comic added confirmation
-    UI-->>User: Modal closes
+    User->>Frontend: Opens "Add Comic" modal
+    Frontend->>User: Shows modal form
+    User->>Frontend: Fills in required fields
+    User->>Frontend: Clicks "Add" button
+    Frontend->>Backend: Sends comic data
+    Backend->>Database: Saves comic data
+    Database-->>Backend: Returns success
+    Backend-->>Frontend: Comic added confirmation
+    Frontend-->>User: Modal closes
