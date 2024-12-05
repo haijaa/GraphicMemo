@@ -16,9 +16,7 @@ module.exports = defineConfig({
         plugins: [createEsbuildPlugin(config)],
       });
       on("file:preprocessor", bundler);
-
       await addCucumberPreprocessorPlugin(on, config);
-
       return config;
     },
     specPattern: [
