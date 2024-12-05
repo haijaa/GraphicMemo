@@ -15,4 +15,4 @@ Changelog Anton Karlsson JSU23 - Labb 3 TypeScript och Testing.
 
 2024-12-05
 
--
+- Gjorde lite tydligare diagram.

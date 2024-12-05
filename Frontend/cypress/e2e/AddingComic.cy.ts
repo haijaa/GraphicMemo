@@ -1,4 +1,3 @@
-import AddComic from "../../src/components/AddComic";
 import {
   When,
   Then,
@@ -6,9 +5,9 @@ import {
   Before,
 } from "@badeball/cypress-cucumber-preprocessor";
 
-describe("Mount and render component AddComic", () => {
+describe("Trying to see that you can open modal, add comic and get confirmation that it was a success.", () => {
   Before(() => {
-    cy.mount(<AddComic />);
+    cy.visit("http://localhost:5173");
   });
 
   Given("Im on the page with the AddComic component", () => {});
@@ -30,6 +29,7 @@ describe("Mount and render component AddComic", () => {
     cy.get("#addComicImage").type(
       "https://static.dc.com/dc/files/default_images/978-1-4012-3541-3.jpg?w=640"
     );
+    cy.get("#closeModal");
     cy.get("#addComicButton").click();
   });
   Then(
