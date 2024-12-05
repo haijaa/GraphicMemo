@@ -61,6 +61,16 @@ app.get('/comics', (_request, response) => __awaiter(void 0, void 0, void 0, fun
     const { rows } = yield client.query('SELECT * FROM comics;');
     response.send(rows);
 }));
+app.post('/comics', (request, response) => __awaiter(void 0, void 0, void 0, function* () {
+    const { comicTitle, comicDescription, comicIssue, comicCharacter, comicAuthor, comicPublisher, comicReleased, comicImageCover } = request.body;
+    try {
+        const { rows } = yield client.query("", [comicTitle, comicDescription, comicIssue, comicCharacter, comicAuthor, comicAuthor, comicPublisher, comicReleased, comicImageCover]);
+        response.status(201).json(rows[0]);
+    }
+    catch (_a) {
+        response.status(500).send('Issues on serverside');
+    }
+}));
 app.listen(port, () => {
     console.log(`Backend started on port ${port}`);
 });
