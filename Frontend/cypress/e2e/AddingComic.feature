@@ -4,6 +4,6 @@ User clicks the button "Add comic". A modal component opens, user enters all req
 And presses the "Add" button. Sends confirmation to the UI, modal closes and you can see updated library with the latest entry.
 
 Scenario: Adding to read library
-    Given Im on the page with the AddComic component
+    Given Im on the page with the AddComic component and can see the button
     When Im clicking on Add comic and enters all fields then clicks Add
     Then Toast with confirmation appears for 3 seconds, then modal closes and see library with latest entry

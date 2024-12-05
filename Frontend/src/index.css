@@ -21,3 +21,11 @@
 .paddingRight {
   padding-right: 10px;
 }
+
+.hover {
+  cursor: pointer;
+}
+
+.inputField {
+  @apply bg-inherit text-white border-b placeholder-current pt-3
+}

@@ -5,13 +5,14 @@ import {
   Before,
 } from "@badeball/cypress-cucumber-preprocessor";
 
-
-describe("Trying to see that you can open modal, add comic and get confirmation that it was a success.", () => {
   Before(() => {
-    cy.visit("http://localhost:5173");
+    cy.viewport(1000, 1000)
+    cy.visit("http://localhost:5173/");
+  })
+  
+  Given("Im on the page with the AddComic component and can see the button", () => {
+    cy.get('p').should('contain', 'Add comic')
   });
-
-  Given("Im on the page with the AddComic component", () => {});
   When("Im clicking on Add comic and enters all fields then clicks Add", () => {
     cy.get("#openModal").click();
     cy.get("#addComicTitle").type("Batman: The Court of Owls (THE NEW 52)");
@@ -33,11 +34,11 @@ describe("Trying to see that you can open modal, add comic and get confirmation 
     cy.get("#addComicButton").click();
   });
   Then(
-    "Toast with confirmation appears for 3 seconds, then modal closes and see library with latest entry.",
+    "Toast with confirmation appears for 3 seconds, then modal closes and see library with latest entry",
     () => {
       cy.get('#successToast')
       .should('be.visible')
       .and('contain', 'Yayy!')
     }
   );
-});
+
