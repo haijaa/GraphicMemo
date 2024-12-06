@@ -1,16 +1,16 @@
-export interface comic {
-    comicTitle: string
-    comicDescription: string
-    comicIssue: number
-    comicCharacter: string
-    comicAuthor: string
-    comicPublisher: string
-    comicReleased: string
-    comicImageCover: string
+export interface Comic {
+    title: string
+    description: string
+    issue: number
+    character: string
+    author: string
+    publisher: string
+    released: number
+    imagecover: string
 }
 
-export interface getComic extends comic {
-    comicId: number;
+export interface GetComic extends Comic {
+    id: number;
 }
 
-export interface postComic extends comic {}
+export interface PostComic extends Comic {}

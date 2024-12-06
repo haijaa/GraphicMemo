@@ -36,8 +36,8 @@ import {
   Then(
     "Toast with confirmation appears for 3 seconds, then modal closes and see library with latest entry",
     () => {
-      cy.get('#successToast')
-      .should('be.visible')
+      cy.get('[data-cy=success-toast]')
+      .should('exist')
       .and('contain', 'Yayy!')
     }
   );

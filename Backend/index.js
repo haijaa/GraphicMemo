@@ -59,15 +59,27 @@ const app = (0, express_1.default)();
 app.use((0, cors_1.default)(), express_1.default.json());
 app.get('/comics', (_request, response) => __awaiter(void 0, void 0, void 0, function* () {
     const { rows } = yield client.query('SELECT * FROM comics;');
-    response.send(rows);
+    const comics = rows.map((row) => ({
+        id: row.comic_id,
+        title: row.comic_title,
+        description: row.comic_description,
+        issue: row.comic_issue,
+        character: row.comic_character,
+        author: row.comic_author,
+        publisher: row.comic_publisher,
+        released: row.comic_released,
+        imagecover: row.comic_imagecover
+    }));
+    response.send(comics);
 }));
-app.post('/comics', (request, response) => __awaiter(void 0, void 0, void 0, function* () {
-    const { comicTitle, comicDescription, comicIssue, comicCharacter, comicAuthor, comicPublisher, comicReleased, comicImageCover } = request.body;
+app.post('/comics/post', (request, response) => __awaiter(void 0, void 0, void 0, function* () {
+    const { title, description, issue, character, author, publisher, released, imagecover } = request.body;
     try {
-        const { rows } = yield client.query("", [comicTitle, comicDescription, comicIssue, comicCharacter, comicAuthor, comicAuthor, comicPublisher, comicReleased, comicImageCover]);
-        response.status(201).json(rows[0]);
+        const { rows } = yield client.query("INSERT INTO comics (comic_title, comic_description, comic_issue, comic_character, comic_author, comic_publisher, comic_released, comic_imagecover) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *;", [title, description, issue, character, author, publisher, released, imagecover]);
+        response.status(201).json({ message: 'Add successful!', data: rows[0] });
     }
-    catch (_a) {
+    catch (error) {
+        console.log(error);
         response.status(500).send('Issues on serverside');
     }
 }));

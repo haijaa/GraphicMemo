@@ -1,8 +1,14 @@
 import { useState } from "react"
 import Icon from "@mdi/react"
 import { mdiImageMultipleOutline, mdiPlus } from "@mdi/js"
+import { toast } from "react-toastify"
+
 
 export default function AddComic () {
+    
+    
+
+    
     const [showModal, setShowModal]= useState(false)
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
@@ -13,19 +19,48 @@ export default function AddComic () {
     const [coverImage, setCoverImage] = useState('')
     const [publisher, setPublisher] = useState('')
 
+    const PostComic = async () => {
+        
+        const postOptions = {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify({
+            title: title,
+            description: description,
+            issue: issue,
+            character: character,
+            author: author,
+            publisher: publisher,
+            released: released,
+            imagecover: coverImage
+          }),
+        };
+        try {
+          await fetch("http://localhost:3000/comics/post", postOptions)
+            .then((response) => response.json())
+            .then((data) => console.log(data));
+            toast.success(<div data-cy="success-toast">Yayy! {title} added to library</div>)
+            setShowModal(false)
+        } catch (error) {
+            console.log(error)
+        }
+      };
 
     return (
         <>
         <div id="openModal" onClick={() => setShowModal(true)} className="hover flex align-center justify-center">
-           <p> Add comic</p>
+           <p> Add comic </p>
            <Icon path={mdiPlus} size={1} className="pl-1"/>
         </div>
         {showModal && (
         <div className="fixed inset-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center text-white">
+        
         <div id="content" className="bg-stone-600 p-5 rounded-lg shadow-lg flex flex-col justify-between w-[50%] h-[50%]">
             <main className="flex justify-between h-full">
+
             <div id="leftSide" className="flex justify-center align-center w-[60%]" style={{alignItems: 'center'}}>
-                <Icon path={mdiImageMultipleOutline} size={5}/>
+                {coverImage ? <img src={coverImage} className="w-[80%] h-[100%]"/>
+                : <Icon path={mdiImageMultipleOutline} size={5}/>}
             </div>
             <div id="rightSide" className="flex flex-col w-[40%]">
             <p className="pb-5">Fill out all fields and press add</p>
@@ -97,7 +132,7 @@ export default function AddComic () {
         <div className="flex justify-end">
         <div className="flex w-1/4 justify-between">
         <button id="closeModal" className="bg-red-900 w-24 rounded mr-4" onClick={() => setShowModal(false)}>Close</button>
-        <button id="addComicButton" className="bg-green-900 w-24 rounded">Add</button>
+        <button id="addComicButton" className="bg-green-900 w-24 rounded" onClick={() => PostComic()}>Add</button>
         </div>
         </div>
         </div>
