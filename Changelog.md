@@ -16,3 +16,12 @@ Changelog Anton Karlsson JSU23 - Labb 3 TypeScript och Testing.
 2024-12-05
 
 - Gjorde lite tydligare diagram.
+- Lade om TDD och BDD till ett E2E-test för att kunna uppfylla båda krav samtidigt.
+- Ändrat då jag såg filändelse på test samt viewport och något annat smått. Börjat bygga komponent som ska testas.
+
+2024-12-06
+
+Stor dag idag.
+
+- Satt styling för view på allcomics, färdigställt addcomic och fått mitt kombinerade tdd/bdd att fungera. Även omstrukturerat databas till snake. Lagt till post endpoint i min index.js.
+  Toast fungerar nu vid varje post. Gjort om så att min DB har snake och min frontend tar emot bara namnet author/title etc.
