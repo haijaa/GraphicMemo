@@ -25,3 +25,7 @@ Stor dag idag.
 
 - Satt styling för view på allcomics, färdigställt addcomic och fått mitt kombinerade tdd/bdd att fungera. Även omstrukturerat databas till snake. Lagt till post endpoint i min index.js.
   Toast fungerar nu vid varje post. Gjort om så att min DB har snake och min frontend tar emot bara namnet author/title etc.
+
+2024-12-09
+
+- Liten push, nu är hela test BDD/TDD färdigt. Toast fungerar och frontend uppdateras efter toast är körd. Allt klart, även skapat ReviewSection component som jag ska börja arbeta på nu.

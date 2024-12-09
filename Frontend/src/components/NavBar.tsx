@@ -17,8 +17,6 @@ export default function NavBar() {
         <p className="mr-5">|</p>
         <p className="mr-5 hover">DC </p>
         <p className="mr-5">|</p>
-        <p className="mr-5 hover">Image </p>
-        <p className="mr-5">|</p>
         <AddComic /> 
         </div>
       </nav>

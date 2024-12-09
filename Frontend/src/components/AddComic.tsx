@@ -41,6 +41,11 @@ export default function AddComic () {
             .then((data) => console.log(data));
             toast.success(<div data-cy="success-toast">Yayy! {title} added to library</div>)
             setShowModal(false)
+
+            setTimeout(() => {
+              window.location.reload();
+          }, 4000);
+          
         } catch (error) {
             console.log(error)
         }
