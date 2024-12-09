@@ -4,7 +4,7 @@ import AddComic from "../components/AddComic";
 export default function NavBar() {
   return (
     <>
-      <nav className="flex justify-between p-5">
+      <nav className="flex justify-between p-5 mb-5 bgWhite">
         <div>
           <h1>GraphicMemo</h1>
         </div>

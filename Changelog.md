@@ -29,3 +29,4 @@ Stor dag idag.
 2024-12-09
 
 - Liten push, nu är hela test BDD/TDD färdigt. Toast fungerar och frontend uppdateras efter toast är körd. Allt klart, även skapat ReviewSection component som jag ska börja arbeta på nu.
+- Ändrat lite färger, lagt till ett till test för komponent allcomics och se så att den hittar ordentligt.
