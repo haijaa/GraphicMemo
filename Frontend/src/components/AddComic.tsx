@@ -60,7 +60,7 @@ export default function AddComic () {
         {showModal && (
         <div className="fixed inset-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center text-white">
         
-        <div id="content" className="bg-stone-600 p-5 rounded-lg shadow-lg flex flex-col justify-between w-[50%] h-[50%]">
+        <div id="content" className="bgBlue p-5 rounded-lg shadow-lg flex flex-col justify-between w-[50%] h-[50%]">
             <main className="flex justify-between h-full">
 
             <div id="leftSide" className="flex justify-center align-center w-[60%]" style={{alignItems: 'center'}}>

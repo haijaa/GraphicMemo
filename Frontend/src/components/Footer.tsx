@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="flex justify-center bgWhite">
+    <footer className="flex justify-center bgBlue">
       <div>
         <p className="font-bold p-5">
           Skolprojekt JSU23 IT-Högskolan i Göteborg. Bilder och information

@@ -30,3 +30,7 @@ Stor dag idag.
 
 - Liten push, nu är hela test BDD/TDD färdigt. Toast fungerar och frontend uppdateras efter toast är körd. Allt klart, även skapat ReviewSection component som jag ska börja arbeta på nu.
 - Ändrat lite färger, lagt till ett till test för komponent allcomics och se så att den hittar ordentligt.
+
+2024-12-10
+
+- Lagt till endpoint för delete, lagt till endpoint för singlecomic, stylat om hela första sidan, single page och modal, lagt till ytterligare interface och en overall lookchange samt lagt in react-router för att styra sidan, lade även till en banner med företagens logor för att förtydliga deras rättigheter.

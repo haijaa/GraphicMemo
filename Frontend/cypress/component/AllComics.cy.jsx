@@ -5,8 +5,7 @@ describe("<AllComics />", () => {
     cy.viewport(2440, 1440);
     cy.mount(<AllComics />);
 
-    cy.get("#writer").should("contain", "Scott Snyder");
-    cy.get("#title").should("contain", "BATMAN: CITY OF OWLS");
-    cy.get("#togglecomments").click();
+    cy.get("p").should("contain", "Latest added");
+    cy.get("#character").should("contain", "The Flash");
   });
 });

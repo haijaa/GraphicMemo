@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react'
 import { GetComic } from '../../../Interfaces/SharedInterfaces'
-import { Icon } from '@mdi/react'
-import { mdiCommentOutline } from '@mdi/js';
-import ReviewSection from './ReviewSection';
+import { useNavigate } from 'react-router-dom'
+import DC from '../assets/dc.png'
+import MARVEL from '../assets/marvel.png'
+
+
 
 export default function AllComicView  ()  {
 const [allComics, setAllComics] = useState<GetComic[]>([])
-const [reviewClicked, setReviewClicked] = useState(false)
+const navigate = useNavigate();
 
-const ToggleComments = () => {
-    return setReviewClicked(!reviewClicked)
-}
+    const NavigateToSingle = (id: number) => {
+        navigate(`/comics/${id}`)
+    }
 
     useEffect (() =>{
         fetch('http://localhost:3000/comics')
@@ -21,46 +23,31 @@ const ToggleComments = () => {
     return (
         <>
         <div id="canvas">
-            <div id="topDiv">
-
-            </div>
-            <main id="mainDiv" className="flex flex-col w-full items-center">
+            <div id="mainDiv" className='bgWhite flex flex-col justify-center items-center'>
+                <div className='classBorder w-3/4'>
+                <p className='headlineBlue'>Latest added comics:</p>
+                </div>
+                <div className='flex justify-between w-3/4 items-center'>
                 {allComics.length ? (
-                    [...allComics].reverse().map((com) => (
-                        <div key={com.id} className='w-[60%] flex flex-col mb-10'>
-                            <div id="bigSide" className='flex'>
-                            <div id="leftSide" className='w-[40%]'>
-                                <img src={com.imagecover} className='w-64'/>
-                            </div>
-                            <div id="rightSide" className='w-[60%]'>
-                                <div className='flex justify-between'>
-                                <h1 id='title'>{com.title} #{com.issue}</h1>
-
-                                <span className='flex hover' id='togglecomments' onClick={() => ToggleComments()}>
-                                    See review {' '}
-                                <Icon path={mdiCommentOutline} size={1} />
-                                </span>
-
+                    [...allComics].reverse().slice(0, 4).map((com) => (
+                        <div key={com.id} className='w-[60%] flex items-center flex-col mb-10 mt-5 pb-5' onClick={() => NavigateToSingle(com.id)}>
+                                <img src={com.imagecover} className='w-[130px] h-[190px]'/>
+                                <h1 id='character'>{com.character} #{com.issue}</h1>
+                                <div className='bg-green-500 w-16 h-16 flex items-center justify-center font-bold text-white text-3xl'>
+                                    <p>5.5</p>
                                 </div>
-                                <p className='border-b w-full pt-2 mb-5'></p>
-                                <p id='writer'>Writer: {com.author}</p>
-                                <p id='publisher'>Publisher: {com.publisher}</p>
-                                <p id='released'>Released: {com.released}</p>
-                                <p className='mt-10'>{com.description}</p>
-                            </div>
-                            </div>
-                            { reviewClicked && <ReviewSection />}
-                            <p className='border-b w-full pt-5 mb-5'></p>
+                                Rating
                         </div>
                     ))
                 ) : (
                     <p>Can't find any comics :(</p>
-                )}
-                
-                
-            </main>
-            <div id="bottomDiv">
-
+                )}    
+                </div>
+            <div className='bg-gray-200 h-28 w-full flex justify-center items-center text-grey'>
+                <p className='text-slate-500 text-xl font-italic'>Publishers:</p>
+                <img src={DC} style={{width: '150px'}}/>
+                <img src={MARVEL} style={{width: '150px'}}/>
+            </div>
             </div>
         </div>
         </>
