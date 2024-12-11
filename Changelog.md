@@ -34,3 +34,8 @@ Stor dag idag.
 2024-12-10
 
 - Lagt till endpoint för delete, lagt till endpoint för singlecomic, stylat om hela första sidan, single page och modal, lagt till ytterligare interface och en overall lookchange samt lagt in react-router för att styra sidan, lade även till en banner med företagens logor för att förtydliga deras rättigheter.
+
+2024-12-11
+
+- Småändringar.
+- Idag gick nästan hela dagen åt att försöka fixa min testconfig som inte går ihop. Tar hjälp imorgon under handledning.

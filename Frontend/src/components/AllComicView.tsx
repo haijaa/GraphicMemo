@@ -44,7 +44,6 @@ const navigate = useNavigate();
                 )}    
                 </div>
             <div className='bg-gray-200 h-28 w-full flex justify-center items-center text-grey'>
-                <p className='text-slate-500 text-xl font-italic'>Publishers:</p>
                 <img src={DC} style={{width: '150px'}}/>
                 <img src={MARVEL} style={{width: '150px'}}/>
             </div>

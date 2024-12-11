@@ -18,10 +18,10 @@ export default function SingleComic () {
             <main className="m-5">
             {comic.map((com) => (
                 <div id="comicBox" key={com.id} className="flex">
-                <div id="leftSide" className="w-[40%] flex justify-center">
+                <div id="leftSide" className="w-[30%] flex justify-center">
                 <img src={com.imagecover} className="w-[300px] h-[400px]"/>
                 </div>
-                <div id="rightSide" className="w-[60%] ml-3">
+                <div id="rightSide" className="w-[70%] ">
                 <div>
                 <p className="headlineBlue classBorder">{com.title} #{com.issue}</p>
                 </div>
@@ -32,7 +32,7 @@ export default function SingleComic () {
                     <div className="flex"><p className="font-bold">Main character:</p> <p className="pl-2">{com.character}</p></div>
                 </div>
                 <div>
-                <div className="mt-5"><p className="font-bold">Description:</p> <p className="pl-2">{com.description}</p></div>
+                <div className="mt-5"><p className="font-bold">Description:</p> <p>{com.description}</p></div>
                 </div>
                 </div>
             </div>
