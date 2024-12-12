@@ -35,6 +35,16 @@
   font-size: large;
 }
 
+.smallBlue {
+  color: #105b85;
+  font-style: italic;
+}
+
+.smallBlack {
+  color: black;
+  font-size: x-small;
+}
+
 .classBorder {
   border-bottom: 2px solid #105b85;
 }

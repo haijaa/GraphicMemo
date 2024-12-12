@@ -2,7 +2,7 @@ import cors from 'cors'
 import * as dotenv from 'dotenv'
 import { Client } from "pg";
 import express, { Request, Response } from "express";
-import { GetComic, PostComic, DeleteComic, GetComicWithId } from '../Interfaces/SharedInterfaces'
+import { GetComic, PostComic, DeleteComic, GetComicWithId, GetReviewLatest } from '../Interfaces/SharedInterfaces'
 import { ComicDB, ComicDBid } from '../Backend/Interfaces/InterfaceBackend'
 
 dotenv.config();
@@ -18,6 +18,23 @@ client.connect();
 const app = express()
 
 app.use(cors(), express.json());
+
+app.get('/reviews/latest', async (_request: Request, response: Response<GetReviewLatest[]>) => {
+  const { rows } = await client.query<GetReviewLatest>(`
+    SELECT 
+      review.review_text, 
+      comics.comic_title, 
+      comics.comic_issue, 
+      review.comic_id 
+    FROM 
+      review 
+    JOIN 
+      comics 
+    ON 
+      review.comic_id = comics.comic_id;
+  `)
+  response.send(rows)
+})
 
 app.get('/comics', async (_request: Request, response: Response<GetComic[]>) => {
     const { rows } = await client.query<ComicDB>(

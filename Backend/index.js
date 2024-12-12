@@ -57,6 +57,22 @@ const client = new pg_1.Client({
 client.connect();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)(), express_1.default.json());
+app.get('/reviews/latest', (_request, response) => __awaiter(void 0, void 0, void 0, function* () {
+    const { rows } = yield client.query(`
+    SELECT 
+      review.review_text, 
+      comics.comic_title, 
+      comics.comic_issue, 
+      review.comic_id 
+    FROM 
+      review 
+    JOIN 
+      comics 
+    ON 
+      review.comic_id = comics.comic_id;
+  `);
+    response.send(rows);
+}));
 app.get('/comics', (_request, response) => __awaiter(void 0, void 0, void 0, function* () {
     const { rows } = yield client.query('SELECT * FROM comics;');
     const comics = rows.map((row) => ({

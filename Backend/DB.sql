@@ -26,6 +26,8 @@ VALUES ('Flashpoint', 'Not a dream, not an imaginary story, not an elseworld. Th
 
 INSERT INTO review (comic_id, review_user, review_text, review_rating)
 VALUES (44, 'Anton', 'Incredible story, love the back and forth and inside into his parents past', 5);
+INSERT INTO review (comic_id, review_user, review_text)
+VALUES (46, 'Frida', 'Epic issue, cant wait for more.');
 
 DROP TABLE comics;
 DROP TABLE review CASCADE;

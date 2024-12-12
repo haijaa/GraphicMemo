@@ -29,4 +29,10 @@ export interface GetComicWithId extends Comic {
       created_at: string;
     }[];
   }
-  
+
+  export interface GetReviewLatest {
+    review_text: string | null;
+    comic_title: string;
+    comic_issue: number;
+    comic_id: number;
+  }
