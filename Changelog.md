@@ -48,3 +48,5 @@ Stor dag idag.
 2024-12-13
 
 - Pushar upp TDD-test. Ska börja bygga komponenten nu.
+- Snabb redigering testet, kom på att jag behöver props.
+- Skrev om funktion i SingleComic då jag kommer behöva skicka den. Samt en sista ändring i test innan bygge interface och komponentnamn får inte krocka.

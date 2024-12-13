@@ -6,10 +6,14 @@ export default function SingleComic() {
   const [comic, setComic] = useState<GetComicWithId[]>([]);
   const { id } = useParams<string>();
 
+  const FetchWithId = async (id: string | undefined) => {
+    const response = await fetch(`http://localhost:3000/comics/${id}`);
+    const data: GetComicWithId[] = await response.json();
+    setComic(data);
+  };
+
   useEffect(() => {
-    fetch(`http://localhost:3000/comics/${id}`)
-      .then((response) => response.json())
-      .then((result: GetComicWithId[]) => setComic(result));
+    FetchWithId(id);
   }, [id]);
 
   return (
