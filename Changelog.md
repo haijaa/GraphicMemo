@@ -44,3 +44,7 @@ Stor dag idag.
 
 - Lagt in latest reviews, lagt till fler endpoints. Inte gjort klart komptest SingleComic, problem med route-params. Lagt till Mockingfil och lite andra småändringar. Även ändrat lite interface för att lägga så mycket som möjligt på databas istället för frontend.
 - Bråkat större delen av dagen med mina route-params som fortfarande inte funkar, troligen tar jag bort det och tänker om med komponenttestet.
+
+2024-12-13
+
+- Pushar upp TDD-test. Ska börja bygga komponenten nu.
