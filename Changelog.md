@@ -50,3 +50,4 @@ Stor dag idag.
 - Pushar upp TDD-test. Ska börja bygga komponenten nu.
 - Snabb redigering testet, kom på att jag behöver props.
 - Skrev om funktion i SingleComic då jag kommer behöva skicka den. Samt en sista ändring i test innan bygge interface och komponentnamn får inte krocka.
+- Skrivit klart komponent för att posta reviews, tagit fram i frontend alla reviews på sida. Några nya endpoints tillhörande reviews post/delete. Nya interfaces för tidigare nämda och flyttat toast till app så den blir tillgänglig över hela applikationen. Även ändrat databas så att user på reviews inte är unique.

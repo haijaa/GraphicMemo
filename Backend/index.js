@@ -73,6 +73,16 @@ app.get('/reviews/latest', (_request, response) => __awaiter(void 0, void 0, voi
   `);
     response.send(rows);
 }));
+app.post('/reviews', (request, response) => __awaiter(void 0, void 0, void 0, function* () {
+    const { comic_id, review_user, review_text, review_rating } = request.body;
+    const { rows } = yield client.query('INSERT INTO review (comic_id, review_user, review_text, review_rating) VALUES ($1, $2, $3, $4)', [comic_id, review_user, review_text, review_rating]);
+    response.status(201).json(rows);
+}));
+app.delete('/reviews', (request, response) => __awaiter(void 0, void 0, void 0, function* () {
+    const { review_id } = request.body;
+    const { rows } = yield client.query('DELETE FROM review WHERE review_id = $1', [review_id]);
+    response.status(201).json(rows);
+}));
 app.get('/comics', (_request, response) => __awaiter(void 0, void 0, void 0, function* () {
     const { rows } = yield client.query('SELECT * FROM comics;');
     const comics = rows.map((row) => ({

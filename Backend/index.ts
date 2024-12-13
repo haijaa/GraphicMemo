@@ -2,8 +2,9 @@ import cors from 'cors'
 import * as dotenv from 'dotenv'
 import { Client } from "pg";
 import express, { Request, Response } from "express";
-import { GetComic, PostComic, DeleteComic, GetComicWithId, GetReviewLatest } from '../Interfaces/SharedInterfaces'
+import { GetComic, PostComic, DeleteComic, GetComicWithId, GetReviewLatest, PostReview, DeleteReview } from '../Interfaces/SharedInterfaces'
 import { ComicDB, ComicDBid } from '../Backend/Interfaces/InterfaceBackend'
+import { request } from 'http';
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ client.connect();
 const app = express()
 
 app.use(cors(), express.json());
+
 
 app.get('/reviews/latest', async (_request: Request, response: Response<GetReviewLatest[]>) => {
   const { rows } = await client.query<GetReviewLatest>(`
@@ -34,6 +36,25 @@ app.get('/reviews/latest', async (_request: Request, response: Response<GetRevie
       review.comic_id = comics.comic_id;
   `)
   response.send(rows)
+})
+
+app.post('/reviews', async (request: Request, response: Response<PostReview[]>) => {
+  const { comic_id, review_user, review_text, review_rating } = request.body as PostReview
+  const { rows } = await client.query<PostReview>(
+    'INSERT INTO review (comic_id, review_user, review_text, review_rating) VALUES ($1, $2, $3, $4)',
+    [comic_id, review_user, review_text, review_rating]
+  );
+  response.status(201).json(rows)
+  } 
+)
+
+app.delete('/reviews', async (request: Request, response: Response<DeleteReview[]>) => {
+  const { review_id } = request.body as DeleteReview
+  const { rows } = await client.query<DeleteReview>(
+    'DELETE FROM review WHERE review_id = $1',
+  [ review_id ]
+  )
+  response.status(201).json(rows)
 })
 
 app.get('/comics', async (_request: Request, response: Response<GetComic[]>) => {

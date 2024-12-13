@@ -15,7 +15,7 @@ CREATE TABLE comics (
 CREATE TABLE review (
     review_id SERIAL PRIMARY KEY,
     comic_id INT REFERENCES comics(comic_id) ON DELETE CASCADE,
-    review_user VARCHAR(50) NOT NULL UNIQUE,
+    review_user VARCHAR(50) NOT NULL,
     review_text text,
     review_rating INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP

@@ -36,3 +36,14 @@ export interface GetComicWithId extends Comic {
     comic_issue: number;
     comic_id: number;
   }
+
+  export interface PostReview {
+    review_user: string;
+    review_text: string | null;
+    review_rating: number | null;
+    comic_id: number;
+  }
+
+  export interface DeleteReview {
+    review_id: number;
+  }
