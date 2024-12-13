@@ -7,12 +7,10 @@ export default function SingleComic() {
   const { id } = useParams<string>();
 
   useEffect(() => {
-    console.log(id, "innan");
     fetch(`http://localhost:3000/comics/${id}`)
       .then((response) => response.json())
       .then((result: GetComicWithId[]) => setComic(result));
   }, [id]);
-  console.log(comic);
 
   return (
     <div>

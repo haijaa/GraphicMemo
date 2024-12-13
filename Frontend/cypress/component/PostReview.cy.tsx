@@ -2,7 +2,7 @@ import PostReview from "../../src/components/PostReview";
 
 describe("Component test for posting a review for a comicbook. Start by checking values to be empty, then fills the form and lastly confirming post by checking if message is visible.", () => {
   it("Mounts component and posting a review.", () => {
-    cy.mount("<PostReview />");
+    cy.mount("<PostReview id={id} FetchWithId={FetchWithId}/>");
 
     cy.get("[data-cy=username-input]").should("have.value", "");
     cy.get("[data-cy=content-input]").should("have.value", "");
