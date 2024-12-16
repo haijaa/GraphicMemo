@@ -55,3 +55,4 @@ Stor dag idag.
 2024-12-16
 
 - Lagt om lite props och en till komponent för table med alla comics.
+- Tester är korrekt och fungerar alla som de ska.
