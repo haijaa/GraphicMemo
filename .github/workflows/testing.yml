@@ -17,17 +17,17 @@ jobs:
 
       - name: Install backend dependencies
         run: |
-          cd backend
+          cd Backend
           npm install
 
       - name: Install frontend dependencies
         run: |
-          cd frontend
+          cd Frontend
           npm install
 
       - name: Start backend
         run: |
-          cd backend
+          cd Backend
           npm run dev &
 
         env:
@@ -35,15 +35,15 @@ jobs:
 
       - name: Start frontend
         run: |
-          cd frontend
+          cd Frontend
           npm run dev &
 
       - name: Run Cypress E2E and Cucumber tests
         run: |
-          cd frontend
+          cd Frontend
           npx cypress run
 
       - name: Run Cypress component test
         run: |
-          cd frontend
+          cd Frontend
           npx cypress run --component
