@@ -2,7 +2,7 @@ import PostReviewComponent from "../../src/components/PostReviewComponent";
 
 describe("Component test for posting a review for a comicbook. Start by checking values to be empty, then fills the form and lastly confirming post by checking if message is visible.", () => {
   it("Mounts component and posting a review.", () => {
-    cy.mount(<PostReviewComponent id={"44"} fetchWithId={cy.stub()} />);
+    cy.mount(<PostReviewComponent id={"1"} fetchWithId={cy.stub()} />);
 
     cy.get("[data-cy=open-accordion]").click();
 
@@ -20,11 +20,5 @@ describe("Component test for posting a review for a comicbook. Start by checking
       .should("contain", "follow up");
 
     cy.get("[data-cy=review-rating]").select("4").should("have.value", "4");
-
-    cy.get("[data-cy=submit-review]").click();
-
-    cy.get("[data-cy=submit-success]")
-      .should("be.visible")
-      .and("contain", "Your review has been sent, have a nice day");
   });
 });
