@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import DC from "../assets/dc.png";
 import MARVEL from "../assets/marvel.png";
 import LatestReviews from "./LatestReviews";
+import ListAllTable from "./ListAllTable";
 
 export default function AllComicView() {
   const [allComics, setAllComics] = useState<GetComic[]>([]);
@@ -58,9 +59,8 @@ export default function AllComicView() {
             <img src={MARVEL} style={{ width: "150px" }} />
           </div>
           <div className="w-3/4 flex justify-between mt-5">
-            <div>HEJ 2</div>
+            <ListAllTable allComics={allComics} />
             <LatestReviews data-cy="Latest-reviews-table" />
-            <div>HEJ 3</div>
           </div>
         </div>
       </div>

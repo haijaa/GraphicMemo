@@ -11,7 +11,7 @@ export default function LatestReviews() {
   }, []);
   return (
     <div>
-      <ol className="flex flex-col justify-center items-center">
+      <ol className="flex flex-col justify-center">
         <p className="headlineBlue">Latest reviews</p>
         {reviews.slice(0, 3).map((rev, index) => (
           <Link to={`/comics/${rev.comic_id}`}>
