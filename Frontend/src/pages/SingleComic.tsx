@@ -16,12 +16,12 @@ export default function SingleComic() {
     setComic(data);
   };
 
-  const DeleteComicFunction = async (x: number) => {
+  const DeleteComicFunction = async (reviewId: number) => {
     await fetch(`http://localhost:3000/comics/delete`, {
       method: "DELETE",
       headers: { "Content-type": "Application/json" },
       body: JSON.stringify({
-        id: x,
+        id: reviewId,
       }),
     });
     window.location.reload();

@@ -56,3 +56,7 @@ Stor dag idag.
 
 - Lagt om lite props och en till komponent för table med alla comics.
 - Tester är korrekt och fungerar alla som de ska.
+
+2024-12-17
+
+- Lagt till ett nytt test. Samt ändrat några data-cy och börjar kolla på att få till rätt rating på framsidan.

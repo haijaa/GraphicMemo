@@ -55,12 +55,12 @@ export default function AllComicView() {
             )}
           </div>
           <div className="bg-gray-200 h-28 w-full flex justify-center items-center text-grey">
-            <img src={DC} style={{ width: "150px" }} />
-            <img src={MARVEL} style={{ width: "150px" }} />
+            <img data-cy="img-dc" src={DC} style={{ width: "150px" }} />
+            <img data-cy="img-marvel" src={MARVEL} style={{ width: "150px" }} />
           </div>
           <div className="w-3/4 flex justify-between mt-5">
             <ListAllTable allComics={allComics} />
-            <LatestReviews data-cy="Latest-reviews-table" />
+            <LatestReviews />
           </div>
         </div>
       </div>

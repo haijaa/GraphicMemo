@@ -12,9 +12,11 @@ export default function LatestReviews() {
   return (
     <div>
       <ol className="flex flex-col justify-center">
-        <p className="headlineBlue">Latest reviews</p>
+        <p className="headlineBlue" data-cy="latest-reviews-table">
+          Latest reviews
+        </p>
         {reviews.slice(0, 3).map((rev, index) => (
-          <Link to={`/comics/${rev.comic_id}`}>
+          <Link data-cy="reviews-container" to={`/comics/${rev.comic_id}`}>
             <li key={index} className="smallBlue hover">
               {rev.review_text?.slice(0, 30)}...
               <p className="smallBlack">{rev.comic_title}</p>
