@@ -1,0 +1,35 @@
+[
+  {
+    "id": 999,
+    "title": "Revenge of TypeScripter",
+    "description": "In a world where JavaScript reigns supreme, meet Alex, a TypeScript enthusiast who just cant seem to let go of his strong opinions about types, interfaces, and generics. Frustrated by the lack of TypeScript adoption in the wild and tired of seeing “any” everywhere, Alex decides its time to take matters into his own hands.",
+    "issue": 1,
+    "character": "Alex Typo 1",
+    "author": "Anton Karlsson",
+    "publisher": "JSU Comics",
+    "released": 2024,
+    "imagecover": "../../src/assets/TypeScripter.jpg"
+  },
+  {
+    "id": 998,
+    "title": "Revenge of TypeScripter 2",
+    "description": "In a world where JavaScript reigns supreme, meet Alex, a TypeScript enthusiast who just cant seem to let go of his strong opinions about types, interfaces, and generics. Frustrated by the lack of TypeScript adoption in the wild and tired of seeing “any” everywhere, Alex decides its time to take matters into his own hands.",
+    "issue": 1,
+    "character": "Alex Typo 2",
+    "author": "Anton Karlsson",
+    "publisher": "JSU Comics",
+    "released": 2024,
+    "imagecover": "../../src/assets/TypeScripter.jpg"
+  },
+  {
+    "id": 997,
+    "title": "Revenge of TypeScripter 3",
+    "description": "In a world where JavaScript reigns supreme, meet Alex, a TypeScript enthusiast who just cant seem to let go of his strong opinions about types, interfaces, and generics. Frustrated by the lack of TypeScript adoption in the wild and tired of seeing “any” everywhere, Alex decides its time to take matters into his own hands.",
+    "issue": 3,
+    "character": "Alex Typo 3",
+    "author": "Anton Karlsson",
+    "publisher": "JSU Comics",
+    "released": 2024,
+    "imagecover": "../../src/assets/TS.jpg"
+  }
+]

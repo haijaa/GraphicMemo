@@ -60,3 +60,4 @@ Stor dag idag.
 2024-12-17
 
 - Lagt till ett nytt test. Samt ändrat några data-cy och börjar kolla på att få till rätt rating på framsidan.
+- Rättat till mitt test för AllComics komponent så att den fyller ett större syfte och mockar data korrekt.

@@ -39,6 +39,7 @@ export default function AllComicView() {
                       <img
                         src={com.imagecover}
                         className="w-[130px] h-[190px]"
+                        alt="coverPic"
                       />
                       <h1 id="character">
                         {com.character} #{com.issue}
