@@ -7,10 +7,12 @@ export interface Comic {
   publisher: string;
   released: number;
   imagecover: string;
+  
 }
 
 export interface GetComic extends Comic {
   id: number;
+  averageRating: number
 }
 
 export interface PostComic extends Comic {}

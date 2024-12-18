@@ -8,6 +8,7 @@ export interface ComicDB {
     comic_publisher: string,
     comic_released: number,
     comic_imagecover: string
+    average_rating: string
 }
 
 export interface ComicDBid extends ComicDB {

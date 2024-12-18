@@ -84,7 +84,29 @@ app.delete("/reviews", (request, response) => __awaiter(void 0, void 0, void 0, 
     response.status(201).json(rows);
 }));
 app.get("/comics", (_request, response) => __awaiter(void 0, void 0, void 0, function* () {
-    const { rows } = yield client.query("SELECT * FROM comics;");
+    const { rows } = yield client.query(`
+      SELECT 
+        comics.comic_id,
+        comics.comic_title,
+        comics.comic_description,
+        comics.comic_issue,
+        comics.comic_character,
+        comics.comic_author,
+        comics.comic_publisher,
+        comics.comic_released,
+        comics.comic_imagecover,
+        COALESCE(AVG(review.review_rating), 0) AS average_rating
+      FROM 
+        comics
+      LEFT JOIN 
+        review 
+      ON 
+        comics.comic_id = review.comic_id
+      GROUP BY 
+        comics.comic_id
+      ORDER BY 
+        comics.comic_id DESC; -- Senast tillagda först
+    `);
     const comics = rows.map((row) => ({
         id: row.comic_id,
         title: row.comic_title,
@@ -95,14 +117,21 @@ app.get("/comics", (_request, response) => __awaiter(void 0, void 0, void 0, fun
         publisher: row.comic_publisher,
         released: row.comic_released,
         imagecover: row.comic_imagecover,
+        averageRating: parseInt(row.average_rating)
     }));
     response.send(comics);
 }));
 app.get("/comics/:id", (request, response) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = request.params;
-    const { rows } = yield client.query(`SELECT comics.comic_id, comics.comic_title, comics.comic_description, comics.comic_issue, comics.comic_character, comics.comic_author, comics.comic_publisher, comics.comic_released, comics.comic_imageCover, COALESCE(
-    json_agg(
-      json_build_object(
+    const { rows } = yield client.query(`
+      SELECT 
+      comics.comic_id, 
+      comics.comic_title, 
+      comics.comic_description, 
+      comics.comic_issue, comics.comic_character, 
+      comics.comic_author, comics.comic_publisher, 
+      comics.comic_released, comics.comic_imageCover, 
+      COALESCE(json_agg(json_build_object(
         'review_id', review.review_id,
         'review_user', review.review_user,
         'review_text', review.review_text,
@@ -111,7 +140,12 @@ app.get("/comics/:id", (request, response) => __awaiter(void 0, void 0, void 0, 
       )
     ) FILTER (WHERE review.review_id IS NOT NULL),
     '[]'
-  ) AS reviews FROM comics LEFT JOIN review ON comics.comic_id = review.comic_id WHERE comics.comic_id = $1 GROUP BY comics.comic_id;`, [id]);
+  ) AS reviews 
+   FROM comics 
+   LEFT JOIN review 
+   ON comics.comic_id = review.comic_id 
+   WHERE comics.comic_id = $1 
+   GROUP BY comics.comic_id;`, [id]);
     const comicsWithReviews = rows.map((row) => ({
         id: row.comic_id,
         title: row.comic_title,

@@ -66,3 +66,4 @@ Stor dag idag.
 
 - Lagt till code-coverage. Tog en stund att få allt rätt.
 - Rättat till testing av post review.
+- Lade rätt average rating samt belastade databasen mer än frontend för att jobba efter rätt konstruktion. Uppdatera då också interfaces.

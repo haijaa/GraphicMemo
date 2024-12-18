@@ -130,35 +130,7 @@
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">120x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">84x</span>
-<span class="cline-any cline-yes">84x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">72x</span>
-<span class="cline-any cline-yes">30x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">72x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">160x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -167,6 +139,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">112x</span>
+<span class="cline-any cline-yes">112x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">96x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">96x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">140x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -200,9 +197,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState, useEffect } from "react"<span class="branch-1 cbranch-no" title="branch not covered" >;</span>
 import { GetComic } from "../../../Interfaces/SharedInterfaces";
 import { Link } from "react-router-dom";
@@ -232,30 +226,27 @@ export default function AllComicView() {
           &lt;/div&gt;
           &lt;div className="flex justify-between w-3/4 items-center"&gt;
             {allComics.length ? (
-              [...allComics]
-                .reverse()
-                .slice(0, 4)
-                .map((com) =&gt; (
-                  &lt;div
-                    key={com.id}
-                    className="w-[60%] flex items-center flex-col mb-10 mt-5 pb-5"
-                  &gt;
-                    &lt;Link to={`/comics/${com.id}`}&gt;
-                      &lt;img
-                        src={com.imagecover}
-                        className="w-[130px] h-[190px]"
-                        alt="coverPic"
-                      /&gt;
-                      &lt;h1 id="character"&gt;
-                        {com.character} #{com.issue}
-                      &lt;/h1&gt;
-                    &lt;/Link&gt;
-                    &lt;div className="bg-green-500 w-16 h-16 flex items-center justify-center font-bold text-white text-3xl"&gt;
-                      &lt;p&gt;5.5&lt;/p&gt;
-                    &lt;/div&gt;
-                    Rating
+              [...allComics].slice(0, 4).map((com) =&gt; (
+                &lt;div
+                  key={com.id}
+                  className="w-[60%] flex items-center flex-col mb-10 mt-5 pb-5"
+                &gt;
+                  &lt;Link to={`/comics/${com.id}`}&gt;
+                    &lt;img
+                      src={com.imagecover}
+                      className="w-[130px] h-[190px]"
+                      alt="coverPic"
+                    /&gt;
+                    &lt;h1 id="character"&gt;
+                      {com.character} #{com.issue}
+                    &lt;/h1&gt;
+                  &lt;/Link&gt;
+                  &lt;div className="bg-green-500 w-16 h-16 flex items-center justify-center font-bold text-white text-3xl"&gt;
+                    &lt;p&gt;{com.averageRating}&lt;/p&gt;
                   &lt;/div&gt;
-                ))
+                  Rating
+                &lt;/div&gt;
+              ))
             ) : (
               &lt;p&gt;Can't find any comics :(&lt;/p&gt;
             )}
@@ -280,7 +271,7 @@ export default function AllComicView() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-18T14:54:39.066Z
+                at 2024-12-18T15:19:14.175Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

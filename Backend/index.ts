@@ -75,7 +75,31 @@ app.delete(
 app.get(
   "/comics",
   async (_request: Request, response: Response<GetComic[]>) => {
-    const { rows } = await client.query<ComicDB>("SELECT * FROM comics;");
+    const { rows } = await client.query<ComicDB>(
+      `
+      SELECT 
+        comics.comic_id,
+        comics.comic_title,
+        comics.comic_description,
+        comics.comic_issue,
+        comics.comic_character,
+        comics.comic_author,
+        comics.comic_publisher,
+        comics.comic_released,
+        comics.comic_imagecover,
+        COALESCE(AVG(review.review_rating), 0) AS average_rating
+      FROM 
+        comics
+      LEFT JOIN 
+        review 
+      ON 
+        comics.comic_id = review.comic_id
+      GROUP BY 
+        comics.comic_id
+      ORDER BY 
+        comics.comic_id DESC; -- Senast tillagda först
+    `
+    );
     const comics: GetComic[] = rows.map((row) => ({
       id: row.comic_id,
       title: row.comic_title,
@@ -86,6 +110,7 @@ app.get(
       publisher: row.comic_publisher,
       released: row.comic_released,
       imagecover: row.comic_imagecover,
+      averageRating: parseInt(row.average_rating)
     }));
     response.send(comics);
   }
@@ -96,9 +121,15 @@ app.get(
   async (request: Request, response: Response<GetComicWithId[]>) => {
     const { id } = request.params;
     const { rows } = await client.query<ComicDBid>(
-      `SELECT comics.comic_id, comics.comic_title, comics.comic_description, comics.comic_issue, comics.comic_character, comics.comic_author, comics.comic_publisher, comics.comic_released, comics.comic_imageCover, COALESCE(
-    json_agg(
-      json_build_object(
+      `
+      SELECT 
+      comics.comic_id, 
+      comics.comic_title, 
+      comics.comic_description, 
+      comics.comic_issue, comics.comic_character, 
+      comics.comic_author, comics.comic_publisher, 
+      comics.comic_released, comics.comic_imageCover, 
+      COALESCE(json_agg(json_build_object(
         'review_id', review.review_id,
         'review_user', review.review_user,
         'review_text', review.review_text,
@@ -107,7 +138,12 @@ app.get(
       )
     ) FILTER (WHERE review.review_id IS NOT NULL),
     '[]'
-  ) AS reviews FROM comics LEFT JOIN review ON comics.comic_id = review.comic_id WHERE comics.comic_id = $1 GROUP BY comics.comic_id;`,
+  ) AS reviews 
+   FROM comics 
+   LEFT JOIN review 
+   ON comics.comic_id = review.comic_id 
+   WHERE comics.comic_id = $1 
+   GROUP BY comics.comic_id;`,
       [id]
     );
     const comicsWithReviews: GetComicWithId[] = rows.map((row) => ({

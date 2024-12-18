@@ -27,30 +27,33 @@ export default function AllComicView() {
           </div>
           <div className="flex justify-between w-3/4 items-center">
             {allComics.length ? (
-              [...allComics]
-                .reverse()
-                .slice(0, 4)
-                .map((com) => (
-                  <div
-                    key={com.id}
-                    className="w-[60%] flex items-center flex-col mb-10 mt-5 pb-5"
-                  >
-                    <Link to={`/comics/${com.id}`}>
-                      <img
-                        src={com.imagecover}
-                        className="w-[130px] h-[190px]"
-                        alt="coverPic"
-                      />
-                      <h1 id="character">
-                        {com.character} #{com.issue}
-                      </h1>
-                    </Link>
+              [...allComics].slice(0, 4).map((com) => (
+                <div
+                  key={com.id}
+                  className="w-[60%] flex items-center flex-col mb-10 mt-5 pb-5"
+                >
+                  <Link to={`/comics/${com.id}`}>
+                    <img
+                      src={com.imagecover}
+                      className="w-[130px] h-[190px]"
+                      alt="coverPic"
+                    />
+                    <h1 id="character">
+                      {com.character} #{com.issue}
+                    </h1>
+                  </Link>
+                  {com.averageRating > 0 ? (
                     <div className="bg-green-500 w-16 h-16 flex items-center justify-center font-bold text-white text-3xl">
-                      <p>5.5</p>
+                      <p>{com.averageRating}</p>
                     </div>
-                    Rating
-                  </div>
-                ))
+                  ) : (
+                    <div className="w-36 h-16 flex items-center justify-center font-bold ">
+                      <p>No rating yet :(</p>
+                    </div>
+                  )}
+                  Rating
+                </div>
+              ))
             ) : (
               <p>Can't find any comics :(</p>
             )}
