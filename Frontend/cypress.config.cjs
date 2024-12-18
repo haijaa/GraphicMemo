@@ -10,13 +10,18 @@ const {
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  env: {
+    codeCoverage: {
+      exclude: "cypress/**/*.*",
+    },
+  },
   e2e: {
     async setupNodeEvents(on, config) {
       const bundler = createBundler({
         plugins: [createEsbuildPlugin(config)],
       });
       on("file:preprocessor", bundler);
-
+      require("@cypress/code-coverage/task")(on, config);
       await addCucumberPreprocessorPlugin(on, config);
 
       return config;
@@ -27,7 +32,6 @@ module.exports = defineConfig({
     ],
     baseUrl: "http://localhost:5173",
   },
-
   component: {
     devServer: {
       framework: "react",
