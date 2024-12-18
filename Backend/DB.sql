@@ -30,6 +30,8 @@ INSERT INTO review (comic_id, review_user, review_text, review_rating)
 VALUES (1, 'Anton', 'Incredible story, love the back and forth and inside into his parents past', 5);
 INSERT INTO review (comic_id, review_user, review_text)
 VALUES (2, 'Frida', 'Epic issue, cant wait for more.');
+INSERT INTO review (comic_id, review_user, review_text, review_rating)
+VALUES (2, 'Anton', 'Truly amazing tale!', 5);
 
 DROP TABLE comics;
 DROP TABLE review CASCADE;
