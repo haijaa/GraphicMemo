@@ -15,7 +15,8 @@ export default function PostReviewComponent({ id, fetchWithId }: PostProps) {
   const [revRating, setRevrating] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const PostReviewFunction = async () => {
+  const PostReviewFunction = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     try {
       await fetch("http://localhost:3000/reviews", {
         method: "POST",
@@ -39,6 +40,7 @@ export default function PostReviewComponent({ id, fetchWithId }: PostProps) {
       console.log("Gick åt skogen", error);
     }
   };
+
   return (
     <>
       <div className="w-3/4 m-5">

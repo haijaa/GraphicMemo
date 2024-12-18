@@ -65,3 +65,4 @@ Stor dag idag.
 2024-12-18
 
 - Lagt till code-coverage. Tog en stund att få allt rätt.
+- Rättat till testing av post review.

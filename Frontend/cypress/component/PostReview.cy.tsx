@@ -12,13 +12,15 @@ describe("Component test for posting a review for a comicbook. Start by checking
 
     cy.get("[data-cy=username-input]").type("John Doe");
     cy.get("[data-cy=username-input]").should("have.value", "John Doe");
-    cy.get("[data-cy=content-input]").type(
-      "Great follow up to the story of court of owls. Stronly recommend."
-    );
+    cy.get("[data-cy=content-input]").type("Testing testing");
     cy.get("[data-cy=content-input]")
       .invoke("val")
-      .should("contain", "follow up");
+      .should("contain", "testing");
 
     cy.get("[data-cy=review-rating]").select("4").should("have.value", "4");
+    cy.get("[data-cy=submit-review]").click();
+    cy.get("[data-cy=submit-success]")
+      .should("exist")
+      .and("contain", "Your review has been sent, have a nice day");
   });
 });
