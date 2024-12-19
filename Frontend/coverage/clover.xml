@@ -1,115 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1734535154214" clover="3.2.0">
-  <project timestamp="1734535154214" name="All files">
-    <metrics statements="131" coveredstatements="83" conditionals="54" coveredconditionals="40" methods="67" coveredmethods="41" elements="252" coveredelements="164" complexity="0" loc="131" ncloc="131" packages="3" files="11" classes="11"/>
+<coverage generated="1734596216979" clover="3.2.0">
+  <project timestamp="1734596216979" name="All files">
+    <metrics statements="126" coveredstatements="66" conditionals="52" coveredconditionals="41" methods="61" coveredmethods="29" elements="239" coveredelements="136" complexity="0" loc="126" ncloc="126" packages="3" files="11" classes="11"/>
     <package name="src">
       <metrics statements="6" coveredstatements="6" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
       <file name="App.tsx" path="C:/Users/z8r90/Desktop/projects/TypeScript/GraphicMemo/Frontend/src/App.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
-        <line num="1" count="160" type="cond" truecount="3" falsecount="0"/>
-        <line num="8" count="56" type="stmt"/>
-        <line num="37" count="56" type="stmt"/>
-        <line num="38" count="20" type="stmt"/>
-        <line num="40" count="20" type="stmt"/>
+        <line num="1" count="32" type="cond" truecount="3" falsecount="0"/>
+        <line num="8" count="11" type="stmt"/>
+        <line num="37" count="11" type="stmt"/>
+        <line num="38" count="4" type="stmt"/>
+        <line num="40" count="4" type="stmt"/>
       </file>
       <file name="main.tsx" path="C:/Users/z8r90/Desktop/projects/TypeScript/GraphicMemo/Frontend/src/main.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="6" count="20" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="98" coveredstatements="69" conditionals="41" coveredconditionals="30" methods="52" coveredmethods="36"/>
+      <metrics statements="93" coveredstatements="52" conditionals="39" coveredconditionals="31" methods="46" coveredmethods="24"/>
       <file name="AddComic.tsx" path="C:/Users/z8r90/Desktop/projects/TypeScript/GraphicMemo/Frontend/src/components/AddComic.tsx">
-        <metrics statements="35" coveredstatements="33" conditionals="7" coveredconditionals="7" methods="17" coveredmethods="16"/>
-        <line num="1" count="180" type="cond" truecount="3" falsecount="0"/>
-        <line num="6" count="3432" type="stmt"/>
-        <line num="7" count="3432" type="stmt"/>
-        <line num="8" count="3432" type="stmt"/>
-        <line num="9" count="3432" type="stmt"/>
-        <line num="10" count="3432" type="stmt"/>
-        <line num="11" count="3432" type="stmt"/>
-        <line num="12" count="3432" type="stmt"/>
-        <line num="13" count="3432" type="stmt"/>
-        <line num="14" count="3432" type="stmt"/>
-        <line num="15" count="3432" type="stmt"/>
-        <line num="17" count="3432" type="stmt"/>
-        <line num="18" count="4" type="stmt"/>
-        <line num="32" count="4" type="stmt"/>
-        <line num="33" count="4" type="stmt"/>
-        <line num="34" count="4" type="stmt"/>
-        <line num="35" count="4" type="stmt"/>
-        <line num="36" count="4" type="stmt"/>
-        <line num="39" count="4" type="stmt"/>
-        <line num="41" count="4" type="stmt"/>
+        <metrics statements="35" coveredstatements="16" conditionals="7" coveredconditionals="6" methods="17" coveredmethods="4"/>
+        <line num="1" count="36" type="cond" truecount="3" falsecount="0"/>
+        <line num="6" count="12" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="10" count="12" type="stmt"/>
+        <line num="11" count="12" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="14" count="12" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
-        <line num="49" count="3432" type="stmt"/>
-        <line num="53" count="8" type="stmt"/>
-        <line num="85" count="152" type="stmt"/>
-        <line num="94" count="1136" type="stmt"/>
-        <line num="103" count="4" type="stmt"/>
-        <line num="112" count="24" type="stmt"/>
-        <line num="121" count="48" type="stmt"/>
-        <line num="130" count="8" type="stmt"/>
-        <line num="139" count="16" type="stmt"/>
-        <line num="148" count="292" type="stmt"/>
-        <line num="157" count="4" type="stmt"/>
-        <line num="164" count="4" type="stmt"/>
-        <line num="175" count="20" type="stmt"/>
+        <line num="49" count="12" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="112" count="0" type="stmt"/>
+        <line num="121" count="0" type="stmt"/>
+        <line num="130" count="0" type="stmt"/>
+        <line num="139" count="0" type="stmt"/>
+        <line num="148" count="0" type="stmt"/>
+        <line num="157" count="1" type="stmt"/>
+        <line num="164" count="0" type="stmt"/>
+        <line num="175" count="4" type="stmt"/>
       </file>
       <file name="AllComicView.tsx" path="C:/Users/z8r90/Desktop/projects/TypeScript/GraphicMemo/Frontend/src/components/AllComicView.tsx">
-        <metrics statements="10" coveredstatements="10" conditionals="7" coveredconditionals="6" methods="6" coveredmethods="6"/>
-        <line num="1" count="160" type="cond" truecount="4" falsecount="1"/>
-        <line num="9" count="112" type="stmt"/>
-        <line num="10" count="112" type="stmt"/>
-        <line num="12" count="96" type="stmt"/>
-        <line num="13" count="40" type="stmt"/>
-        <line num="14" count="32" type="stmt"/>
-        <line num="15" count="32" type="stmt"/>
-        <line num="18" count="96" type="stmt"/>
-        <line num="34" count="140" type="stmt"/>
-        <line num="70" count="20" type="stmt"/>
+        <metrics statements="10" coveredstatements="10" conditionals="9" coveredconditionals="8" methods="6" coveredmethods="6"/>
+        <line num="1" count="32" type="cond" truecount="4" falsecount="1"/>
+        <line num="9" count="19" type="stmt"/>
+        <line num="10" count="19" type="stmt"/>
+        <line num="12" count="16" type="stmt"/>
+        <line num="13" count="8" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="18" count="16" type="stmt"/>
+        <line num="31" count="24" type="stmt"/>
+        <line num="73" count="4" type="stmt"/>
       </file>
       <file name="Footer.tsx" path="C:/Users/z8r90/Desktop/projects/TypeScript/GraphicMemo/Frontend/src/components/Footer.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
-        <line num="1" count="160" type="cond" truecount="3" falsecount="0"/>
-        <line num="2" count="40" type="stmt"/>
-        <line num="12" count="20" type="stmt"/>
+        <line num="1" count="32" type="cond" truecount="3" falsecount="0"/>
+        <line num="2" count="8" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
       </file>
       <file name="LatestReviews.tsx" path="C:/Users/z8r90/Desktop/projects/TypeScript/GraphicMemo/Frontend/src/components/LatestReviews.tsx">
         <metrics statements="10" coveredstatements="10" conditionals="5" coveredconditionals="4" methods="6" coveredmethods="6"/>
-        <line num="1" count="160" type="cond" truecount="4" falsecount="1"/>
-        <line num="5" count="128" type="stmt"/>
-        <line num="6" count="128" type="stmt"/>
-        <line num="7" count="112" type="stmt"/>
-        <line num="8" count="40" type="stmt"/>
-        <line num="9" count="32" type="stmt"/>
-        <line num="10" count="32" type="stmt"/>
-        <line num="12" count="112" type="stmt"/>
-        <line num="19" count="192" type="stmt"/>
-        <line num="30" count="20" type="stmt"/>
+        <line num="1" count="32" type="cond" truecount="4" falsecount="1"/>
+        <line num="5" count="19" type="stmt"/>
+        <line num="6" count="19" type="stmt"/>
+        <line num="7" count="16" type="stmt"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="12" count="16" type="stmt"/>
+        <line num="19" count="24" type="stmt"/>
+        <line num="30" count="4" type="stmt"/>
       </file>
       <file name="ListAllTable.tsx" path="C:/Users/z8r90/Desktop/projects/TypeScript/GraphicMemo/Frontend/src/components/ListAllTable.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
-        <line num="1" count="160" type="cond" truecount="3" falsecount="0"/>
-        <line num="8" count="20" type="stmt"/>
-        <line num="9" count="96" type="stmt"/>
-        <line num="16" count="140" type="stmt"/>
-        <line num="26" count="20" type="stmt"/>
+        <line num="1" count="32" type="cond" truecount="3" falsecount="0"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="16" type="stmt"/>
+        <line num="16" count="24" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
       </file>
       <file name="NavBar.tsx" path="C:/Users/z8r90/Desktop/projects/TypeScript/GraphicMemo/Frontend/src/components/NavBar.tsx">
         <metrics statements="6" coveredstatements="5" conditionals="5" coveredconditionals="4" methods="4" coveredmethods="3"/>
-        <line num="1" count="160" type="cond" truecount="4" falsecount="1"/>
-        <line num="5" count="40" type="stmt"/>
-        <line num="6" count="40" type="stmt"/>
-        <line num="7" count="40" type="stmt"/>
+        <line num="1" count="32" type="cond" truecount="4" falsecount="1"/>
+        <line num="5" count="8" type="stmt"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
-        <line num="25" count="20" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
       </file>
       <file name="PostReviewComponent.tsx" path="C:/Users/z8r90/Desktop/projects/TypeScript/GraphicMemo/Frontend/src/components/PostReviewComponent.tsx">
-        <metrics statements="29" coveredstatements="3" conditionals="11" coveredconditionals="3" methods="15" coveredmethods="1"/>
-        <line num="1" count="180" type="cond" truecount="3" falsecount="0"/>
-        <line num="10" count="35" type="stmt"/>
+        <metrics statements="24" coveredstatements="3" conditionals="7" coveredconditionals="3" methods="9" coveredmethods="1"/>
+        <line num="1" count="36" type="cond" truecount="3" falsecount="0"/>
+        <line num="10" count="4" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
@@ -118,42 +118,37 @@
         <line num="18" count="0" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
         <line num="50" count="0" type="stmt"/>
-        <line num="74" count="0" type="stmt"/>
-        <line num="82" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
         <line num="84" count="0" type="stmt"/>
-        <line num="98" count="0" type="stmt"/>
-        <line num="113" count="5" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="115" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.pages">
       <metrics statements="27" coveredstatements="8" conditionals="10" coveredconditionals="7" methods="13" coveredmethods="3"/>
       <file name="Home.tsx" path="C:/Users/z8r90/Desktop/projects/TypeScript/GraphicMemo/Frontend/src/pages/Home.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
-        <line num="1" count="160" type="cond" truecount="3" falsecount="0"/>
-        <line num="5" count="20" type="stmt"/>
-        <line num="6" count="56" type="stmt"/>
-        <line num="11" count="20" type="stmt"/>
+        <line num="1" count="32" type="cond" truecount="3" falsecount="0"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="11" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
       </file>
       <file name="SingleComic.tsx" path="C:/Users/z8r90/Desktop/projects/TypeScript/GraphicMemo/Frontend/src/pages/SingleComic.tsx">
         <metrics statements="23" coveredstatements="4" conditionals="7" coveredconditionals="4" methods="11" coveredmethods="1"/>
-        <line num="1" count="160" type="cond" truecount="4" falsecount="1"/>
-        <line num="9" count="20" type="stmt"/>
+        <line num="1" count="32" type="cond" truecount="4" falsecount="1"/>
+        <line num="9" count="4" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
-        <line num="11" count="20" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
@@ -172,7 +167,7 @@
         <line num="63" count="0" type="stmt"/>
         <line num="103" count="0" type="stmt"/>
         <line num="108" count="0" type="stmt"/>
-        <line num="130" count="20" type="stmt"/>
+        <line num="130" count="4" type="stmt"/>
       </file>
     </package>
   </project>

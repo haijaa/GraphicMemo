@@ -97,7 +97,7 @@ app.get(
       GROUP BY 
         comics.comic_id
       ORDER BY 
-        comics.comic_id DESC; -- Senast tillagda först
+        comics.comic_id DESC; 
     `
     );
     const comics: GetComic[] = rows.map((row) => ({

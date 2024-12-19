@@ -49,7 +49,7 @@ export default function AddComic() {
   return (
     <>
       <div
-        id="openModal"
+        data-cy="open-modal"
         onClick={() => setShowModal(true)}
         className="hover flex align-center justify-center"
       >
@@ -77,7 +77,7 @@ export default function AddComic() {
               <div id="rightSide" className="flex flex-col w-[40%]">
                 <p className="pb-5">Fill out all fields and press add</p>
                 <input
-                  id="addComicTitle"
+                  data-cy="comic-title"
                   type="text"
                   className="inputField"
                   placeholder="Add a title"
@@ -86,7 +86,7 @@ export default function AddComic() {
                 />
 
                 <input
-                  id="addComicDescription"
+                  data-cy="comic-description"
                   type="text"
                   className="inputField"
                   placeholder="Add a description"
@@ -95,7 +95,7 @@ export default function AddComic() {
                 />
 
                 <input
-                  id="addComicIssue"
+                  data-cy="comic-issue"
                   type="text"
                   className="inputField"
                   placeholder="Add issuenumber"
@@ -104,7 +104,7 @@ export default function AddComic() {
                 />
 
                 <input
-                  id="addComicCharacter"
+                  data-cy="comic-character"
                   type="text"
                   className="inputField"
                   placeholder="Add character"
@@ -113,7 +113,7 @@ export default function AddComic() {
                 />
 
                 <input
-                  id="addComicAuthor"
+                  data-cy="comic-author"
                   type="text"
                   className="inputField"
                   placeholder="Add author"
@@ -122,7 +122,7 @@ export default function AddComic() {
                 />
 
                 <input
-                  id="addComicPublisher"
+                  data-cy="comic-publisher"
                   type="text"
                   className="inputField"
                   placeholder="Add publisher"
@@ -131,7 +131,7 @@ export default function AddComic() {
                 />
 
                 <input
-                  id="addComicReleased"
+                  data-cy="comic-released"
                   type="text"
                   className="inputField"
                   placeholder="Add year of release"
@@ -140,7 +140,7 @@ export default function AddComic() {
                 />
 
                 <input
-                  id="addComicImage"
+                  data-cy="comic-coverimage"
                   type="text"
                   className="inputField"
                   placeholder="Add cover"
@@ -152,14 +152,14 @@ export default function AddComic() {
             <div className="flex justify-end">
               <div className="flex w-1/4 justify-between">
                 <button
-                  id="closeModal"
+                  data-cy="close-modal"
                   className="bg-red-900 w-24 rounded mr-4"
                   onClick={() => setShowModal(false)}
                 >
                   Close
                 </button>
                 <button
-                  id="addComicButton"
+                  data-cy="comic-add-comic-button"
                   className="bg-green-900 w-24 rounded"
                   onClick={() => PostComic()}
                 >
