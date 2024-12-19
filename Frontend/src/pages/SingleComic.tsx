@@ -16,17 +16,6 @@ export default function SingleComic() {
     setComic(data);
   };
 
-  const DeleteComicFunction = async (reviewId: number) => {
-    await fetch(`http://localhost:3000/comics/delete`, {
-      method: "DELETE",
-      headers: { "Content-type": "Application/json" },
-      body: JSON.stringify({
-        id: reviewId,
-      }),
-    });
-    window.location.reload();
-  };
-
   const DeleteReviewFunction = async (revId: number) => {
     await fetch(`http://localhost:3000/reviews`, {
       method: "DELETE",
@@ -60,9 +49,6 @@ export default function SingleComic() {
                 <p className="headlineBlue classBorder" id="title">
                   {com.title} #{com.issue}
                 </p>
-                <div onClick={() => DeleteComicFunction(com.id)}>
-                  <Icon path={mdiTrashCanOutline} size={1} />
-                </div>
               </div>
               <div className="mb-5">
                 <div className="flex">

@@ -71,3 +71,4 @@ Stor dag idag.
 2024-12-19
 
 - Ändrade till enhetligt för tester att hämta element, la rätt mockdata.
+- Stora förändringar. Lagt till en ytterligare page som man kan hantera sina comics. Nytt test för denna komponent, som provar lägga till och sedan ta bort samma tidning. Tagit bort några saker från single. Tester flyter på mer nu.
