@@ -24,8 +24,8 @@ describe("A test that goes through the whole site and see if everything can be f
   });
 
   it("Finds Add Comic, clicks modal appears and clicks close and it disappears.", () => {
-    cy.get("#openModal").click();
+    cy.get("[data-cy=open-modal]").click();
     cy.get("[data-cy=icon-image]").should("exist");
-    cy.get("#closeModal").click();
+    cy.get("[data-cy=close-modal]").click();
   });
 });

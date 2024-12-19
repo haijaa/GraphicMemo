@@ -1,5 +1,6 @@
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
+import ManageComics from "./pages/ManageComics";
 import NavBar from "./components/NavBar";
 import SingleComic from "./pages/SingleComic";
 import { createHashRouter, Outlet, RouterProvider } from "react-router-dom";
@@ -10,6 +11,7 @@ function App() {
       children: [
         { element: <Home />, path: "/" },
         { element: <SingleComic />, path: "/comics/:id" },
+        { element: <ManageComics />, path: "/managecomics" },
       ],
       element: (
         <>

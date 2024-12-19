@@ -14,7 +14,7 @@ export default function ListAllTable({ allComics }: AllComicProp) {
         </p>
         {allComics.map((biglist) => (
           <Link data-cy="container-comics-list" to={`/comics/${biglist.id}`}>
-            <div>
+            <div key={biglist.id}>
               <p className="smallBlue hover">{biglist.title}</p>
               <p className="smallBlack">{biglist.publisher}</p>
             </div>

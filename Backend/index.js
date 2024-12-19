@@ -105,7 +105,7 @@ app.get("/comics", (_request, response) => __awaiter(void 0, void 0, void 0, fun
       GROUP BY 
         comics.comic_id
       ORDER BY 
-        comics.comic_id DESC; -- Senast tillagda först
+        comics.comic_id DESC; 
     `);
     const comics = rows.map((row) => ({
         id: row.comic_id,
