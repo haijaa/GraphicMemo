@@ -86,10 +86,15 @@ export default function SingleComic() {
           <div id="reviewContainer" className="w-3/4">
             {comic.length > 0 &&
               comic[0].reviews.map((review) => (
-                <div key={review.review_id} className="mb-4 mt-2 border-b">
+                <div
+                  data-cy="review-item"
+                  key={review.review_id}
+                  className="mb-4 mt-2 border-b"
+                >
                   <div className="flex justify-between">
                     <p className="smallBlue">{review.review_user}</p>
                     <p
+                      data-cy="review-trashcan"
                       className="text-sm text-gray-500 flex"
                       onClick={() => DeleteReviewFunction(review.review_id)}
                     >

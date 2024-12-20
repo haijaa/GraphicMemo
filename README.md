@@ -8,9 +8,11 @@
 
 ### 3. Navigera till frontend och skriv npm install.
 
-### 4. Skapa en environment fil i backend för att kunna köra databas. Skapa en .env och lägg in följade "PGURI=postgres://DITT_ANVÄNDARNAMN:DITT_LÖSENORD@localhost/graphicmemo"
+### 4. Skapa en PSQL databas. Använd filen DB.sql för att göra detta. Denna kommer skapa en liten databas med den information som behövs för att köra projektet.
 
-### 5. Navigera till backend och skriv npm run dev.
+### 5. Skapa en environment fil i backend för den databas vi just skapa. Skapa en .env och lägg in följade "PGURI=postgres://DITT_ANVÄNDARNAMN:DITT_LÖSENORD@localhost/graphicmemo"
+
+### 6. Navigera till backend och skriv npm run dev.
 
 ### 7. Navigera till frontend och skriv npm run dev. Klicka CTRL + MOUSE 1 på url som kommer upp så vi öppnar adressen i webbläsaren.
 

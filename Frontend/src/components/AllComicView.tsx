@@ -32,7 +32,7 @@ export default function AllComicView() {
                   key={com.id}
                   className="w-[60%] flex items-center flex-col mb-10 mt-5 pb-5"
                 >
-                  <Link to={`/comics/${com.id}`}>
+                  <Link data-cy="single-link" to={`/comics/${com.id}`}>
                     <img
                       src={com.imagecover}
                       className="w-[130px] h-[190px]"
@@ -43,8 +43,11 @@ export default function AllComicView() {
                     </h1>
                   </Link>
                   {com.averageRating > 0 ? (
-                    <div className="bg-green-500 w-16 h-16 flex items-center justify-center font-bold text-white text-3xl">
-                      <p>{com.averageRating}</p>
+                    <div
+                      data-cy="rating-box"
+                      className="bg-green-500 w-16 h-16 flex items-center justify-center font-bold text-white text-3xl"
+                    >
+                      <p data-cy="avg-rating">{com.averageRating}</p>
                     </div>
                   ) : (
                     <div className="w-36 h-16 flex items-center justify-center font-bold ">

@@ -28,4 +28,9 @@ describe("A test that goes through the whole site and see if everything can be f
     cy.get("[data-cy=icon-image]").should("exist");
     cy.get("[data-cy=close-modal]").click();
   });
+
+  it('Returns to homepage', () => {
+    cy.get('[data-cy=home-button]')
+    .click()
+  })
 });

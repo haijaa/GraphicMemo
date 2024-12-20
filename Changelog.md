@@ -72,3 +72,7 @@ Stor dag idag.
 
 - Ändrade till enhetligt för tester att hämta element, la rätt mockdata.
 - Stora förändringar. Lagt till en ytterligare page som man kan hantera sina comics. Nytt test för denna komponent, som provar lägga till och sedan ta bort samma tidning. Tagit bort några saker från single. Tester flyter på mer nu.
+
+2024-12-20
+
+- Lagt till ytterligare ett test för att se så avg-rating fungerar korrekt och sedan ta bort så man kan köra test om och om igen. Även ändrat test för AddComic så att nu kan alla tester köras oberoende av varandra.

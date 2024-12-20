@@ -13,6 +13,10 @@ import {
   Given("Im on the page with the AddComic component and can see the button", () => {
     cy.get('p').should('contain', 'Add comic')
   });
+  Given('Im on the page and locates manage comics button', () => {
+    cy.get('[data-cy=manage-comics-link]').should('contain', 'Manage')
+  })
+
   When("Im clicking on Add comic and enters all fields then clicks Add", () => {
     cy.get("[data-cy=open-modal]").click();
     cy.get("[data-cy=comic-title]").type("Batman: The Court of Owls (THE NEW 52)");
@@ -33,6 +37,15 @@ import {
     );
     cy.get("[data-cy=comic-add-comic-button]").click();
   });
+  When('Im clicking on on that to redirect to the list with comics, finds the Batman I just added, clicks the trashcan', () => {
+    cy.get('[data-cy=manage-comics-link]').click()
+    cy.get("[data-cy=comic-item]")
+      .first()
+      .should('contain', 'Batman')
+      .find('[data-cy=delete-button]')
+      .click()
+  })
+
   Then(
     "Toast with confirmation appears for 3 seconds, then modal closes and see library with latest entry",
     () => {
@@ -41,4 +54,14 @@ import {
       .and('contain', 'Yayy!')
     }
   );
+  Then('The list of comics updates and we can not find Batman', () => {
+    cy.get("[data-cy=comic-item]")
+      .first()
+      .should('not.contain', 'Batman')
+  })
+  
+
+  
+
+  
 

@@ -12,11 +12,14 @@ export default function NavBar() {
           <h1>GraphicMemo</h1>
         </div>
         <div className="flex hover">
-          <div onClick={() => navigate("/")}>Home</div>
+          <div data-cy="home-button" onClick={() => navigate("/")}>
+            Home
+          </div>
           <p className="pl-5 pr-5">|</p>
           <AddComic />
           <p className="pl-5 pr-5">|</p>
           <div
+            data-cy="manage-comics-link"
             className="flex items-center justify-center"
             onClick={() => navigate("/manageComics")}
           >
