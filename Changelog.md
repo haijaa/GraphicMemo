@@ -76,3 +76,4 @@ Stor dag idag.
 2024-12-20
 
 - Lagt till ytterligare ett test för att se så avg-rating fungerar korrekt och sedan ta bort så man kan köra test om och om igen. Även ändrat test för AddComic så att nu kan alla tester köras oberoende av varandra.
+- Ett sista test för github actions innan inlämning.
